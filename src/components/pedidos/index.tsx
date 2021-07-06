@@ -43,7 +43,6 @@ export function Pedidos() {
   });
 
   function sendMessage() {
-    const apiWhats = 'https://api.whatsapp.com/send';
 
     let text = `##### SOLICITANDO PEDIDO!! #####\n
     _______________________\n 
@@ -58,111 +57,111 @@ export function Pedidos() {
     text = window.encodeURIComponent(text)
 
     console.log(text)
+    const apiWhats = 'https://api.whatsapp.com/send';
     let url = `${apiWhats}?phone=55${telefone}&text=${text}`
-
     window.open(url, '_blank')
   }
 
   return (
     <>
-   
-    <Container md style={{ display: 'flex', border: '1px solid black', marginTop: 50}}>
-      <Col md={8} style={{ marginBottom: 20 }}>
-      <Card style={{ marginTop: 20, width: '98%'}}>
-        <CardImg top width="10" src={pizza} alt="Card image cap" />
-        <CardBody>
-          <CardTitle tag="h5">Card title</CardTitle>
-          <CardSubtitle tag="h6" className="mb-2 text-muted">Card subtitle</CardSubtitle>
-          <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-          <Button>Button</Button>
-        </CardBody>
-      </Card>
-      <Card style={{ marginTop: 20, width: '98%'}}>
-        <CardImg top width="100%" src="/assets/318x180.svg" alt="Card image cap" />
-        <CardBody>
-          <CardTitle tag="h5">Card title</CardTitle>
-          <CardSubtitle tag="h6" className="mb-2 text-muted">Card subtitle</CardSubtitle>
-          <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-          <Button>Button</Button>
-        </CardBody>
-      </Card>
-      <Card style={{ marginTop: 20, width: '98%'}}>
-        <CardImg top width="100%" src="/assets/318x180.svg" alt="Card image cap" />
-        <CardBody>
-          <CardTitle tag="h5">Card title</CardTitle>
-          <CardSubtitle tag="h6" className="mb-2 text-muted">Card subtitle</CardSubtitle>
-          <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-          <Button>Button</Button>
-        </CardBody>
-      </Card>
-      </Col>
-  
-      <Col md={4}>
-      <Jumbotron style={{ borderRadius: 1, marginTop: 20, marginBottom: 20, display: 'flex' }}>
-        <Form onSubmit={formik.handleSubmit}>
-          <h3>Faça o seu pedido:</h3>
-          <FormGroup style={{ marginBottom: 10 }}>
-            <Label>Nome</Label>
-            <Input type="text" placeholder="Informe o seu nome" {...formik.getFieldProps('nome')} />
-          </FormGroup>
-          <FormGroup>
-            <Label>Número para contato (WhatsApp)</Label>
-            <Input type="number" placeholder="DDD+Número" {...formik.getFieldProps('telefone')} />
-          </FormGroup>    <br />
-          <FormGroup>
-            <Label>Selecione o produto que você deseja comprar</Label>
-            <Input type="select" {...formik.getFieldProps('produto')} >
-              <option value="Trufa">Trufa</option>
-              <option value="Pão de Mel">Pão de Mel</option>
-              <option value="CupCake">Cupcake</option>
-            </Input>
-          </FormGroup>
-          <FormGroup>
-            <Label>Selecione a forma de pagamento</Label>
-            <Input type="select" {...formik.getFieldProps('pagamento')} >
-              <option value="Dinheiro">Dinheiro</option>
-              <option value="Cartão de crédito">Cartão de Crédito</option>
-              <option value="Cartão de Débito">Cartão de débito</option>
-              <option value="Pix">PIX</option>
-            </Input>
-          </FormGroup>
-          <br />
-          <Row>
-            <h3>Endereço</h3>
-            <Col md={6}>
-              <FormGroup>
-                <Label for="exampleCity">Rua</Label>
-                <Input type="text" placeholder="Informe sua rua" {...formik.getFieldProps('rua')} />
-              </FormGroup>
-            </Col>
-            <Col md={4}>
-              <FormGroup>
-                <Label for="exampleState">Bairro</Label>
-                <Input type="text" placeholder="Informe o seu bairro" {...formik.getFieldProps('bairro')} />
-              </FormGroup>
-            </Col>
-            <Col md={2}>
-              <FormGroup>
-                <Label for="exampleZip">Número </Label>
-                <Input type="number" placeholder="Nº casa" {...formik.getFieldProps('ncasa')} />
-              </FormGroup>
-            </Col>
-          </Row>
-          <br />
-          <Button
-            type="submit"
-            onClick={sendMessage}
-          >
-            Fazer Pedido
-          </Button>
-          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 10, color: 'blue' }}>Seu pedido será enviado para o WhatsApp do estabelecimento</div>
 
-          </Form>
-      </Jumbotron>
-      </Col>
-     
+      <Container md style={{ display: 'flex', border: '1px solid black', marginTop: 50 }}>
+        <Col md={8} style={{ marginBottom: 20 }}>
+          <Card style={{ marginTop: 20, width: '98%' }}>
+            <img src={pizza} width="50%" alt="pizza" style={{}} />
+            <CardBody>
+              <CardTitle tag="h5">Card title</CardTitle>
+              <CardSubtitle tag="h6" className="mb-2 text-muted">Card subtitle</CardSubtitle>
+              <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
+              <Button>Button</Button>
+            </CardBody>
+          </Card>
+          <Card style={{ marginTop: 20, width: '98%' }}>
+            <CardImg top width="100%" src="/assets/318x180.svg" alt="Card image cap" />
+            <CardBody>
+              <CardTitle tag="h5">Card title</CardTitle>
+              <CardSubtitle tag="h6" className="mb-2 text-muted">Card subtitle</CardSubtitle>
+              <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
+              <Button>Button</Button>
+            </CardBody>
+          </Card>
+          <Card style={{ marginTop: 20, width: '98%' }}>
+            <CardImg top width="100%" src="/assets/318x180.svg" alt="Card image cap" />
+            <CardBody>
+              <CardTitle tag="h5">Card title</CardTitle>
+              <CardSubtitle tag="h6" className="mb-2 text-muted">Card subtitle</CardSubtitle>
+              <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
+              <Button>Button</Button>
+            </CardBody>
+          </Card>
+        </Col>
 
-          {/* 
+        <Col md={4}>
+          <Jumbotron style={{ borderRadius: 1, marginTop: 20, marginBottom: 20, display: 'flex' }}>
+            <Form onSubmit={formik.handleSubmit}>
+              <h3>Faça o seu pedido:</h3>
+              <FormGroup style={{ marginBottom: 10 }}>
+                <Label>Nome</Label>
+                <Input type="text" placeholder="Informe o seu nome" {...formik.getFieldProps('nome')} />
+              </FormGroup>
+              <FormGroup>
+                <Label>Número para contato (WhatsApp)</Label>
+                <Input type="number" placeholder="DDD+Número" {...formik.getFieldProps('telefone')} />
+              </FormGroup>    <br />
+              <FormGroup>
+                <Label>Selecione o produto que você deseja comprar</Label>
+                <Input type="select" {...formik.getFieldProps('produto')} >
+                  <option value="Trufa">Trufa</option>
+                  <option value="Pão de Mel">Pão de Mel</option>
+                  <option value="CupCake">Cupcake</option>
+                </Input>
+              </FormGroup>
+              <FormGroup>
+                <Label>Selecione a forma de pagamento</Label>
+                <Input type="select" {...formik.getFieldProps('pagamento')} >
+                  <option value="Dinheiro">Dinheiro</option>
+                  <option value="Cartão de crédito">Cartão de Crédito</option>
+                  <option value="Cartão de Débito">Cartão de débito</option>
+                  <option value="Pix">PIX</option>
+                </Input>
+              </FormGroup>
+              <br />
+              <Row>
+                <h3>Endereço</h3>
+                <Col md={6}>
+                  <FormGroup>
+                    <Label for="exampleCity">Rua</Label>
+                    <Input type="text" placeholder="Informe sua rua" {...formik.getFieldProps('rua')} />
+                  </FormGroup>
+                </Col>
+                <Col md={4}>
+                  <FormGroup>
+                    <Label for="exampleState">Bairro</Label>
+                    <Input type="text" placeholder="Informe o seu bairro" {...formik.getFieldProps('bairro')} />
+                  </FormGroup>
+                </Col>
+                <Col md={2}>
+                  <FormGroup>
+                    <Label for="exampleZip">Número </Label>
+                    <Input type="number" placeholder="Nº casa" {...formik.getFieldProps('ncasa')} />
+                  </FormGroup>
+                </Col>
+              </Row>
+              <br />
+              <Button
+                type="submit"
+                onClick={sendMessage}
+              >
+                Fazer Pedido
+              </Button>
+              <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 10, color: 'blue' }}>Seu pedido será enviado para o WhatsApp do estabelecimento</div>
+
+            </Form>
+          </Jumbotron>
+        </Col>
+
+
+        {/* 
 
       <FormGroup>
         <Label for="exampleSelectMulti">Select Multiple</Label>
@@ -213,8 +212,8 @@ export function Pedidos() {
           Check me out
         </Label>
       </FormGroup> */}<br />
-       
-    </Container>
+
+      </Container>
     </>
   )
 
